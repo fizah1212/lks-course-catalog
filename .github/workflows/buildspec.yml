@@ -22,15 +22,15 @@ phases:
  post_build: # In this phase you must push the image to ECR and create an image definition
   commands:# Run your post-build script here
    - echo "push the image to ECR.."
-   - printf "[{"name":"%s","imageUri":"%s"}]" $CONTAINER_NAME $(ECR_REPO):latest > imagedefinitions.json
+   - printf "[{"name":"%s","imageUri":"%s"}]" $CONTAINER_NAME ${ECR_REPO}:latest > imagedefinitions.json
    - echo "build complete.."
 
 
 reports: # Report file
  test-report:
   files:
-   -'report/test-result.xml"
-  file-format;UNITXML
+   -'report/test-result.xml'
+  file-format:JUNITXML
 
 
 artifacts: # Output artifact will generate build
