@@ -1,0 +1,17 @@
+
+{
+   "AWSEBDockerrunVersion": "1",
+   "Authentication": {
+      "Bucket": "arn:aws:s3:::lks-catalog",
+      "Key": "config.json"
+   },
+   "Image": {
+      "Name": "056665234171.dkr.ecr.us-east-1.amazonaws.com/lks-catalog-image"
+   },
+   "Ports": [
+      {
+         "ContainerPort": 8000,
+         "HostPort": 8080
+      }
+   ]
+}
