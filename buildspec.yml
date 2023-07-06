@@ -1,0 +1,38 @@
+version: 0.2
+
+
+env: # Create the environment
+ variables:
+  ECR_REPO: 056665234171.dkr.ecr.us-east-1.amazonaws.com/lks-catalog-image   
+  ECR_REGION: us-east-1
+  CONTAINER_NAME: container-catalog
+
+
+phases:
+ install: # Install runtime
+  runtime-versions:
+   nodejs: 16
+   docker: 20
+ pre_build: # You must use this phase for installing dependencies and login into ECR
+  commands: # Run your pre-build script here
+   - echo "Install Dependencies and login into ECR"
+ build: # In This phase you must Run Unit testing and Build an image from Dockerfile  
+  commands:
+   - echo "Run unit testing and build docker image"
+ post_build: # In this phase you must push the image to ECR and create an image definition
+  commands:# Run your post-build script here
+   - echo "push the image to ECR.."
+   - printf "[{"name":"%s","imageUri":"%s"}]" $CONTAINER_NAME ${ECR_REPO}:latest > imagedefinitions.json
+   - echo "build complete.."
+
+
+reports: # Report file
+ test-report:
+  files:
+   -'report/test-result.xml'
+file-format: JUNITXML
+
+
+artifacts: # Output artifact will generate build
+ files:
+   - imagedefinitions.json
