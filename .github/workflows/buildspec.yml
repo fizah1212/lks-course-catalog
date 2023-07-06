@@ -3,9 +3,9 @@ version: 0.2
 
 env: # Create the environment
  variables:
-  ECR_REPO: YOUR ECR_REPO
-  ECR_REGION: YOUR ECR_REGION
-  CONTAINER_NAME: YOUR_CONTAINER_NAME
+  ECR_REPO: 056665234171.dkr.ecr.us-east-1.amazonaws.com/lks-catalog-image   
+  ECR_REGION: us-east-1
+  CONTAINER_NAME: container-catalog
 
 
 phases:
@@ -30,7 +30,7 @@ reports: # Report file
  test-report:
   files:
    -'report/test-result.xml'
-  file-format:JUNITXML
+fileFormat:JUNITXML
 
 
 artifacts: # Output artifact will generate build
