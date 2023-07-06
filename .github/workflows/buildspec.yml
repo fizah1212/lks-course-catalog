@@ -30,7 +30,7 @@ reports: # Report file
  test-report:
   files:
    -'report/test-result.xml'
-fileFormat:JUNITXML
+file-format: JUNITXML
 
 
 artifacts: # Output artifact will generate build
