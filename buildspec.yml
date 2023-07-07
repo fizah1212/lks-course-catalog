@@ -22,7 +22,7 @@ phases:
  post_build: # In this phase you must push the image to ECR and create an image definition
   commands: # Run your post-build script here
    - echo "push the image to ECR.."
-   - printf "[{"name":"container","imageUri":"056665234171.dkr.ecr.us-east-1.amazonaws.com/lks-catalog-image "}]" $CONTAINER_NAME ${ECR_REPO}:latest > imagedefinitions.json
+   - printf '[{"name":"container","imageUri":"056665234171.dkr.ecr.us-east-1.amazonaws.com/lks-catalog-image:latest"}]'> imagedefinitions.json
    - echo "build complete.."
 
 
