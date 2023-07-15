@@ -11,7 +11,7 @@ env: # Create the environment
 phases:
  install: # Install runtime
   runtime-versions:
-   nodejs: 10
+   nodejs: 18
    docker: 19
  pre_build: # You must use this phase for installing dependencies and login into ECR
   commands: # Run your pre-build script here
