@@ -2,7 +2,7 @@
 {
    "AWSEBDockerrunVersion": "1",
    "Authentication": {
-      "Bucket": "catalog-buckets3",
+      "Bucket": "lks-bucket",
       "Key": "config.json"
    },
    "Image": {
