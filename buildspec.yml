@@ -5,7 +5,7 @@ env: # Create the environment
  variables:
   ECR_REPO: 056665234171.dkr.ecr.us-east-1.amazonaws.com/lks-catalog-image   
   ECR_REGION: us-east-1
-  CONTAINER_NAME: container
+  CONTAINER_NAME: lks-catalog-container
 
 
 phases:
